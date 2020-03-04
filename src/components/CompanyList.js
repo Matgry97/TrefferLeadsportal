@@ -5,11 +5,7 @@ import axios from 'axios';
 const Lead = props => (
     <tr>
        <td>{props.lead.cname}</td>
-      <td>{props.lead.name}</td>
-      <td>{props.lead.email}</td>
-      <td>{props.lead.comment}</td>
-      <td>{props.lead.tlfnr}</td>
-      <td>{props.lead.date.substring(0,10)}</td>
+      <td>{props.lead.amount}</td>
       <td>
         <Link to={"/edit/"+props.lead._id}>edit</Link> | <a href="#" onClick={() => { props.deleteLead(props.lead._id) }}>delete</a>
       </td>
@@ -61,11 +57,7 @@ export default class LeadsList extends Component {
           <thead className="thead-light">
             <tr>
               <th>Bedrifts Navn</th>
-              <th>Lead Navn</th>
-              <th>Email</th>
-              <th>Merknad</th>
-              <th>Telefon Nr.</th>
-              <th>Dato Laget</th>
+              <th>Antall leads</th>
               <th>Funksjoner</th>
             </tr>
           </thead>

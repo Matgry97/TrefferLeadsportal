@@ -13,6 +13,9 @@ export default class Navbar extends Component {
           <Link to="/" className="nav-link">Leads</Link>
           </li>
           <li className="navbar-item">
+            <Link to="/altlist" className="nav-link">bedriftsliste</Link>
+          </li>
+          <li className="navbar-item">
           <Link to="/create" className="nav-link">Lag en Lead</Link>
           </li>
           <li className="navbar-item">

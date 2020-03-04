@@ -9,7 +9,7 @@ export default class CreateLead extends Component {
         super(props);
 
         this.onChangeName = this.onChangeName.bind(this);
-        this.onChangeLastname = this.onChangeLastname.bind(this);
+        this.onChangecname = this.onChangecname.bind(this);
         this.onChangeEmail = this.onChangeEmail.bind(this);
         this.onChangeTlfnr = this.onChangeTlfnr.bind(this);
         this.onChangeComment = this.onChangeComment.bind(this);
@@ -17,9 +17,11 @@ export default class CreateLead extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            username: "",
-            description: "",
-            duration: 0,
+            name: "",
+            cname: "",
+            email: "",
+            tlfnr: 0,
+            comment: "",
             date: new Date(),
             users: [] 
         }
@@ -48,9 +50,9 @@ export default class CreateLead extends Component {
         });
     }
 
-    onChangeLastname(e) {
+    onChangecname(e) {
         this.setState({
-            lastname: e.target.value
+            cname: e.target.value
         });
     }
 
@@ -83,7 +85,7 @@ export default class CreateLead extends Component {
 
         const lead = {
             name: this.state.name,
-            lastname: this.state.lastname, 
+            cname: this.state.cname, 
             email: this.state.email,
             tlfnr: this.state.tlfnr,
             comment: this.state.comment,
@@ -108,8 +110,8 @@ export default class CreateLead extends Component {
                 <select ref="userInput"
                     required
                     className="form-control"
-                    value={this.state.lastname}
-                    onChange={this.onChangeLastname}>
+                    value={this.state.cname}
+                    onChange={this.onChangecname}>
                     {
                       this.state.users.map(function(user) {
                         return <option 

@@ -10,16 +10,16 @@ router.route('/').get((req, res) => {
 });
 
     router.route('/add').post((req, res) =>  {
+        const cname = req.body.cname;
         const name = req.body.name; 
-        const lastname = req.body.lastname;
         const comment = req.body.comment;
         const email = req.body.email;
         const tlfnr = Number(req.body.tlfnr);
         const date = Date.parse(req.body.date);
 
         const newLead = new Lead({
+            cname,
             name,
-            lastname,
             comment,
             email,
             tlfnr,
@@ -52,8 +52,9 @@ router.route('/').get((req, res) => {
 
                 //if (!Lead) return res.status(404).send();
 
+               
+                leads.cname = req.body.cname;
                 leads.name = req.body.name; 
-                leads.lastname = req.body.lastname;
                 leads.email = req.body.email;
                 leads.tlfnr = Number(req.body.tlfnr);
                 leads.comment = req.body.comment; 

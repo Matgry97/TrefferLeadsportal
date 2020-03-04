@@ -7,6 +7,7 @@ import Leadsliste from './components/Leadsliste';
 import EditLead from './components/EditLead';
 import CreateLead from './components/CreateLead';
 import CreateUser from './components/CreateUser';
+import CompnayList from './components/CompanyList';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Navbar />
         <br />
         <Route path="/" exact component={Leadsliste} />
+        <Route path="/altlist" component={CompnayList} />
         <Route path="/edit/:id" component={EditLead} />
         <Route path="/create" component={CreateLead} />
         <Route path="/user" component={CreateUser} />  

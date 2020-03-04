@@ -9,7 +9,7 @@ export default class EditExercises extends Component {
     super(props);
 
     this.onChangeName = this.onChangeName.bind(this);
-    this.onChangeLastname = this.onChangeLastname.bind(this);
+    this.onChangecname = this.onChangecname.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangeTlfnr = this.onChangeTlfnr.bind(this);
     this.onChangeComment = this.onChangeComment.bind(this);
@@ -17,11 +17,13 @@ export default class EditExercises extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-        username: "",
-        description: "",
-        duration: 0,
-        date: new Date(),
-        users: [] 
+      name: "",
+      cname: "",
+      email: "",
+      tlfnr: 0,
+      comment: "",
+      date: new Date(),
+      users: [] 
     }
 
 
@@ -34,7 +36,7 @@ export default class EditExercises extends Component {
         .then(response => {
           this.setState({
             name: response.data.name,
-            lastname: response.data.lastname,
+            cname: response.data.cname,
             email: response.data.email,
             tlfnr: response.data.tlfnr,
             comment: response.data.comment,
@@ -64,9 +66,9 @@ export default class EditExercises extends Component {
           });
       }
 
-      onChangeLastname(e) {
+      onChangecname(e) {
           this.setState({
-              lastname: e.target.value
+              cname: e.target.value
           });
       }
 
@@ -100,7 +102,7 @@ export default class EditExercises extends Component {
 
       const lead = {
           name: this.state.name,
-          lastname: this.state.lastname, 
+          cname: this.state.cname, 
           email: this.state.email,
           tlfnr: this.state.tlfnr,
           comment: this.state.comment,
@@ -125,8 +127,8 @@ export default class EditExercises extends Component {
               <select ref="userInput"
                   required
                   className="form-control"
-                  value={this.state.lastname}
-                  onChange={this.onChangeLastname}>
+                  value={this.state.cname}
+                  onChange={this.onChangecname}>
                   {
                     this.state.users.map(function(user) {
                       return <option 
@@ -140,7 +142,6 @@ export default class EditExercises extends Component {
             <div className="form-group"> 
               <label>Navn på Lead: </label>
               <input  type="text"
-                  required
                   className="form-control"
                   value={this.state.name}
                   onChange={this.onChangeName}
@@ -151,6 +152,7 @@ export default class EditExercises extends Component {
               <input 
                   placeholder="leadEksempel@treffer.no"
                   type="email" 
+                  required
                   className="form-control"
                   value={this.state.email}
                   onChange={this.onChangeEmail}
