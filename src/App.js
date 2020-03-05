@@ -16,7 +16,7 @@ function App() {
         <Navbar />
         <br />
         <Route path="/" exact component={Leadsliste} />
-        <Route path="/altlist" component={CompnayList} />
+        <Route path="/userlist" component={CompnayList} />
         <Route path="/edit/:id" component={EditLead} />
         <Route path="/create" component={CreateLead} />
         <Route path="/user" component={CreateUser} />  
