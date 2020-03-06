@@ -6,7 +6,7 @@ const User = props => (
     <tr>
       <td>{props.user.username}</td>
       <td>{props.user.email}</td>
-      <td>{props.user.amount}</td>
+      <td>{props.user.leads.length}</td>
       <td>
         <Link to={"/edit/"+props.user._id}>edit</Link> | <a href="#" onClick={() => { props.deleteUser(props.user._id) }}>delete</a>
       </td>
