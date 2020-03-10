@@ -5,7 +5,7 @@ router.route('/').get((req, res) => {
     User.aggregate([{ "$lookup": {
         "from": "leads",
         "localField": "username", 
-        "foreignField": "name", 
+        "foreignField": "cname", 
         "as": "leads" 
     }
 
