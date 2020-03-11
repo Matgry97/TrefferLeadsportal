@@ -21,19 +21,19 @@ export default class CreateUser extends Component {
         handleChange(e) {
             this.setState({
                 [e.target.name]: e.target.value
-                
             });
         }
 
         onSubmit(e){
            
+            const {username, email, password, password_confirmation} = this.state;
 
             axios.post('http://localhost:5000/users/add', {
                 user: {
-                    username: this.state.username,
-                    email: this.state.email,
-                    password: this.state.password,
-                    password_confirmation: this.state.password_confirmation
+                    username: username,
+                    email: email,
+                    password: password,
+                    password_confirmation: password_confirmation
                 }
             },
             {withCredentials: true}
@@ -44,13 +44,13 @@ export default class CreateUser extends Component {
                 
              
     
-            this.setState({
+            /*this.setState({
                 username: '',
                 email: '',
                 password: '',
                 password_confirmation: ''
 
-            })
+            })*/
             e.preventDefault();
         }
 
@@ -64,7 +64,7 @@ export default class CreateUser extends Component {
                 <div className="form-group"> 
                     <label>Username: </label>
                     <input  type="text"
-                    name="username"
+                        name="username"
                         className="form-control"
                         value={this.state.username}
                         onChange={this.handleChange}
@@ -72,35 +72,38 @@ export default class CreateUser extends Component {
                 </div>
                 <div className="form-group">
                     <label>E-mail: </label>
-                    <input type="email" 
-                    placeholder="bedrift@gmail.no"
-                    required
-                    name="email"
-                    className="form-control"
-                    value={this.state.email}
-                    onChange={this.handleChange}
+                    <input 
+                        type="email" 
+                        name="email"
+                        placeholder="eksempel@gmail.no"
+                        className="form-control"
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                        required
                     />
                 </div>
                 <div className="form-group">
                     <label>Password: </label>
-                    <input type="password" 
-                    className="form-control"
-                    placeholder="Password"
-                    name="password"
-                    value={this.state.password}
-                    onChange={this.handleChange}
-                    required
+                    <input 
+                        type="password" 
+                        name="password"
+                        className="form-control"
+                        placeholder="Password"
+                        value={this.state.password}
+                        onChange={this.handleChange}
+                        required
                     />
                 </div>
                 <div className="form-group">
                     <label>Confirm password: </label>
-                    <input type="password" 
-                    className="form-control"
-                    placeholder="Password"
-                    name="password_confirmation"
-                    value={this.state.password_confirmation}
-                    onChange={this.handleChange}
-                    required
+                    <input 
+                        type="password" 
+                        name="password_confirmation"
+                        className="form-control"
+                        placeholder="Password"
+                        value={this.state.password_confirmation}
+                        onChange={this.handleChange}
+                        required
                     />
                 </div>
                 <div className="form-group">
