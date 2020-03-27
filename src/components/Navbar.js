@@ -1,12 +1,13 @@
 import React, { Component} from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../pictures/treffer.png';
 
 export default class Navbar extends Component {
 
     render() {
         return (
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <Link to="/" className="navbar-brand">Treffer AS - Leadsportal</Link>
+        <Link to="/" className="navbar-brand" ><img src={Logo} alt="Treffer AS logo"/></Link>
         <div className="collpase navbar-collapse">
         <ul className="navbar-nav mr-auto">
           <li className="navbar-item">

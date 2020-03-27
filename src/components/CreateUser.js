@@ -13,7 +13,6 @@ export default class CreateUser extends Component {
             username: "",
             email: "",
             password: "",
-            password_confirmation: "",
             registrationError: ""
         } 
     }
@@ -26,17 +25,15 @@ export default class CreateUser extends Component {
 
         onSubmit(e){
            
-            const {username, email, password, password_confirmation} = this.state;
+            const {username, email, password} = this.state;
 
             axios.post('http://localhost:5000/users/add', {
                 user: {
                     username: username,
                     email: email,
-                    password: password,
-                    password_confirmation: password_confirmation
+                    password: password
                 }
             },
-            {withCredentials: true}
             ).then(res => {console.log(res.data);
             }).catch(error => {
                 console.log(error);
@@ -44,13 +41,12 @@ export default class CreateUser extends Component {
                 
              
     
-            /*this.setState({
+            this.setState({
                 username: '',
                 email: '',
-                password: '',
-                password_confirmation: ''
+                password: ''
 
-            })*/
+            })
             e.preventDefault();
         }
 
@@ -94,18 +90,7 @@ export default class CreateUser extends Component {
                         required
                     />
                 </div>
-                <div className="form-group">
-                    <label>Confirm password: </label>
-                    <input 
-                        type="password" 
-                        name="password_confirmation"
-                        className="form-control"
-                        placeholder="Password"
-                        value={this.state.password_confirmation}
-                        onChange={this.handleChange}
-                        required
-                    />
-                </div>
+
                 <div className="form-group">
                     <input type="submit" value="Create User" className="btn btn-primary" />
                 </div>
