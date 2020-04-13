@@ -35,6 +35,28 @@ const Lead = props => (
   </div>
 );
 
+const tableLeads = props => (
+  <tr>
+    <td>{props.lead.cname}</td>
+    <td>{props.lead.name}</td>
+    <td>{props.lead.comment}</td>
+    <td>{props.lead.email}</td>
+    <td>{props.lead.tlfnr}</td>
+    <td>{props.date.date.substring(0, 10)}</td>
+    <td>
+      <Link to={"/edit/" + props.user._id}>edit</Link> |{" "}
+      <a
+        href="#"
+        onClick={() => {
+          props.deleteUser(props.user._id);
+        }}
+      >
+        delete
+      </a>
+    </td>
+  </tr>
+);
+
 export default class CardList extends Component {
   constructor(props) {
     super(props);
@@ -78,7 +100,13 @@ export default class CardList extends Component {
   }
 
   render() {
-    return <div>{this.leadList()}</div>;
+    return (
+      <div>
+        <button onClick="viewTable">Tabell</button>
+        <button onClick="viewCard">Card</button>
+        {this.leadList()}
+      </div>
+    );
   }
 }
 
