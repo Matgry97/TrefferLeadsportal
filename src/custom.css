@@ -1,0 +1,26 @@
+.custom-btn {
+  background-color: #ff4917;
+  border: none;
+  color: white;
+  padding: 0.5em 1em;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 14px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.custom-btn:hover {
+  opacity: 0.6;
+  background-color: #ff5f33;
+}
+
+#moveRight {
+  float: right;
+}
+
+#navBarLogos {
+  float: right;
+  margin-left: 27em;
+}
