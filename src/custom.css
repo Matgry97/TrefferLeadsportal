@@ -24,3 +24,29 @@
   float: right;
   margin-left: 27em;
 }
+
+.color-orange {
+  color: #ff4917;
+}
+
+.props-card {
+  color: black;
+  font-style: italic;
+}
+
+.props-card:hover {
+  color: #ff4917;
+}
+
+.props-card:active {
+  color: #ff4917;
+}
+
+.dato {
+  font-size: 0.7em;
+  font-style: italic;
+}
+
+.card-style-custom {
+  width: 69.35em;
+}

@@ -130,8 +130,7 @@ export default class EditExercises extends Component {
 
   render() {
     return (
-      <div>
-        <h3>EndreLead</h3>
+      <div className="login bg-light">
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Velg en Bedrift: </label>

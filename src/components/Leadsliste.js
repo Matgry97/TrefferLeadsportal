@@ -16,7 +16,6 @@ const Lead = (props) => (
     <td>{props.lead.range}</td>
     <td>
       <Link to={"/edit/" + props.lead._id}>
-        {" "}
         <Button className="custom-btn">Endre</Button>
       </Link>
     </td>

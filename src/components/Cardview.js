@@ -8,24 +8,36 @@ import styled from "styled-components";
 
 const Lead = (props) => (
   <div class="space">
-    <Card style={{ width: "50em" }}>
+    <Card className="card-style-custom">
       <Card.Body>
         <Card.Title>
           {props.lead.cname}
           <Card.Text>
-            <small class="date-text">{props.lead.date.substring(0, 10)}</small>
+            <label className="dato">
+              Dato:
+              {props.lead.date.substring(0, 10)}
+            </label>
           </Card.Text>
         </Card.Title>
         <Card.Subtitle className="mb-2 text muted">
           {props.lead.name}
         </Card.Subtitle>
         <Card.Text>{props.lead.comment}</Card.Text>
-        <Card.Link href="#">Tlf.Nr: {props.lead.tlfnr}</Card.Link>
-        <Card.Link href="#">Rangering: {props.lead.range}</Card.Link>
-        <Card.Link href="#">Email : {props.lead.email}</Card.Link>
+        <Card.Link href="#">
+          <label className="color-orange">Tlf.Nr:</label>{" "}
+          <label className="props-card">{props.lead.tlfnr}</label>
+        </Card.Link>
+        <Card.Link href="#">
+          <label className="color-orange">Rangering:</label>{" "}
+          <label className="props-card">{props.lead.range}</label>
+        </Card.Link>
+        <Card.Link href="#">
+          <label className="color-orange">Email :</label>{" "}
+          <label className="props-card">{props.lead.email}</label>
+        </Card.Link>
         <Card.Link id="moveRight">
           <Link to={"/edit/" + props.lead._id}>
-            <Button className="custom-btn">Edit</Button>
+            <Button className="custom-btn">Endre</Button>
           </Link>{" "}
         </Card.Link>
         <Card.Link id="moveRight">
@@ -36,7 +48,7 @@ const Lead = (props) => (
               props.deleteLead(props.lead._id);
             }}
           >
-            Delete{"  "}
+            Slett
           </Button>
         </Card.Link>
       </Card.Body>
